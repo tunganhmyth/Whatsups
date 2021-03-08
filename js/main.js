@@ -51,3 +51,39 @@ function openCity(evt, cityName) {
     evt.currentTarget.className += " active";
 }
 // Get the element with id="defaultOpen" and click on it
+
+$(document).ready(function () {
+    $("#notificationLink").click(function () {
+        $("#notificationContainer").fadeToggle(300);
+        $("#notification_count").fadeOut("slow");
+        return false;
+    });
+
+    //Document Click
+    $(document).click(function () {
+        $("#notificationContainer").hide();
+    });
+    //Popup Click
+    $("#notificationContainer").click(function () {
+        return false
+    });
+
+});
+
+$(document).ready(function () {
+    $("#notificationLink_1").click(function () {
+        $("#notificationContainer_1").fadeToggle(300);
+        $("#notification_count_1").fadeOut("slow");
+        return false;
+    });
+
+    //Document Click
+    $(document).click(function () {
+        $("#notificationContainer_1").hide();
+    });
+    //Popup Click
+    $("#notificationContainer_1").click(function () {
+        return false
+    });
+
+});

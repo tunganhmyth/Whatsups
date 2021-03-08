@@ -11,44 +11,93 @@
     <link rel="stylesheet" href="./css/font-awesome.css">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
+<style>
+    .nav>li {
+        float: left;
+        margin-right: 15px;
+    }
+
+    .nav>li>a {
+        text-transform: uppercase;
+        color: red;
+    }
+
+    .nav li {
+        position: relative;
+        list-style: none;
+    }
+
+    .nav li a {
+        padding: 10px;
+        line-height: 20px;
+        display: inline-block;
+    }
+
+    .nav .sub-menu {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 100%;
+        width: 200px;
+        background-color: #eee;
+        padding: 5px 20px;
+    }
+
+    .nav li:hover>.sub-menu {
+        display: block;
+    }
+
+    .nav>li>.sub-menu {
+        top: 40px;
+        left: 0;
+    }
+</style>
 
 <body>
+    <nav>
+        <ul class="nav">
+            <li><a href="#">Menu số 1</a></li>
+            <li>
+                <a href="#">Menu số 2</a>
+                <ul class="sub-menu">
+                    <li><a href="#">Menu số 2.1</a></li>
+                    <li><a href="#">Menu số 2.2</a></li>
+                    <li><a href="#">Menu số 2.3</a></li>
+                    <li><a href="#">Menu số 2.4</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Menu số 3</a></li>
+            <li><a href="#">Menu số 4</a></li>
+            <li><a href="#">Menu số 5</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h3>Popover Example</h3>
+        <p>By default, the popover will appear on the right side of the element.</p>
+        <p>Use the data-placement attribute to set the position of the popover on top, bottom, left or the right side of
+            the element.</p>
+        <p>Note: The placement attributes do not work if it is not enough room for them. For example, try to remove
+            these paragraphs and click on the "Top" popover to understand how it works.</p>
+        <a href="#" title="Header" data-toggle="popover" data-placement="top" data-content="Content">Top</a>
+        <a href="#" title="Header" data-toggle="popover" data-placement="bottom" data-content="Content">Bottom</a>
+        <a href="#" title="Header" data-toggle="popover" data-placement="left" data-content="Content">Left</a>
+        <a href="#" title="Header" data-toggle="popover" data-placement="right" data-content="Content">Right</a>
+    </div>
 
-
-    <main>
-        <div class="partner">
-            <div class="container">
-                <div class="partner-detail">
-                    <div class="partner-card">
-                        <a href="#"><img src="./images/Rectangle 572.png" alt=""></a>
-                    </div>
-                    <div class="partner-card">
-                        <a href="#"><img src="./images/Rectangle 573.png" alt=""></a>
-                    </div>
-                    <div class="partner-card">
-                        <a href="#"><img src="./images/Rectangle 574.png" alt=""></a>
-                    </div>
-                    <div class="partner-card">
-                        <a href="#"><img src="./images/Rectangle 572.png" alt=""></a>
-                    </div>
-                    <div class="partner-card">
-                        <a href="#"><img src="./images/Rectangle 573.png" alt=""></a>
-                    </div>
-                    <div class="partner-card">
-                        <a href="#"><img src="./images/Rectangle 574.png" alt=""></a>
-                    </div>
-                    <div class="partner-card">
-                        <a href="#"><img src="./images/Rectangle 572.png" alt=""></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="popover"]').popover();
+        });
+    </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="./js/main.js"></script>
+
 </body>
 
 </html>

@@ -13,9 +13,10 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald:400,700&amp;subset=vietnamese" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" href="./css/font-awesome.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
-<body class="h-screen bg-black font-sans">
+<body class="h-screen g-bs font-sans">
     <div class="a">
         <nav class="flex relative border-gray-300 text-gray-900 ">
             <div class="container mx-auto flex  justify-between">
@@ -93,7 +94,7 @@
                             </svg>
                         </a>
                     </li>
-                    <li class="hover:bg-blue-800 hover:text-white">
+                    <!-- <li class="hover:bg-blue-800 hover:text-white">
                         <a href="#" class="relative block py-6 px-2 lg:p-6 text-sm lg:text-base font-bold">
                             <svg width="29" heighst="22" viewBox="0 0 29 22" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -102,17 +103,322 @@
                                     fill="white" />
                             </svg>
                         </a>
-                    </li>
-                    <li class="hover:bg-blue-800 hover:text-white">
-                        <a href="#" class="relative block py-6 px-2 lg:p-6 text-sm lg:text-base font-bold">
-                            <svg width="24" height="28" viewBox="0 0 24 28" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M9.17161 1.83826C9.92176 1.08811 10.9392 0.666687 12 0.666687C13.0609 0.666687 14.0783 1.08811 14.8285 1.83826C15.4724 2.48222 15.8741 3.32314 15.975 4.21942C17.4293 4.90428 18.6872 5.95566 19.6211 7.27693C20.7354 8.85329 21.3336 10.7363 21.3334 12.6667C21.3334 12.6667 21.3334 12.6666 21.3334 12.6667V16.8774C21.3333 17.0581 21.3689 17.2372 21.438 17.4042C21.5072 17.5711 21.6085 17.7229 21.7363 17.8506L23.6095 19.7239C23.9908 20.1052 24.1049 20.6787 23.8985 21.1769C23.6922 21.6752 23.206 22 22.6667 22H17.3334C17.3334 23.4145 16.7715 24.7711 15.7713 25.7713C14.7711 26.7715 13.4145 27.3334 12 27.3334C10.5856 27.3334 9.229 26.7715 8.2288 25.7713C7.22861 24.7711 6.66671 23.4145 6.66671 22H1.33337C0.794089 22 0.307907 21.6752 0.101533 21.1769C-0.104842 20.6787 0.0092326 20.1052 0.390563 19.7239L2.2639 17.8505C2.52187 17.5926 2.66671 17.2424 2.66671 16.8787V12.6667C2.66671 8.93239 4.8602 5.71228 8.02508 4.21969C8.12586 3.3233 8.52759 2.48228 9.17161 1.83826ZM9.33337 22C9.33337 22.7073 9.61432 23.3855 10.1144 23.8856C10.6145 24.3857 11.2928 24.6667 12 24.6667C12.7073 24.6667 13.3856 24.3857 13.8857 23.8856C14.3858 23.3855 14.6667 22.7073 14.6667 22H9.33337ZM12 3.33335C11.6464 3.33335 11.3073 3.47383 11.0572 3.72388C10.8072 3.97393 10.6667 4.31307 10.6667 4.66669V5.12135C10.6667 5.68636 10.3106 6.19002 9.77792 6.37839C7.18707 7.29464 5.33337 9.7667 5.33337 12.6667V16.8787C5.33337 17.7702 5.03831 18.6322 4.50218 19.3334H19.4979C19.2851 19.055 19.1089 18.7495 18.9742 18.4243C18.7711 17.9339 18.6666 17.4082 18.6667 16.8774C18.6667 16.8773 18.6667 16.8774 18.6667 16.8774V12.6667C18.6669 11.2876 18.2395 9.94228 17.4435 8.81614C16.6476 7.69001 15.522 6.83832 14.222 6.37833C13.6894 6.18989 13.3334 5.68628 13.3334 5.12135V4.66669C13.3334 4.31307 13.1929 3.97393 12.9428 3.72388C12.6928 3.47383 12.3537 3.33335 12 3.33335Z"
-                                    fill="white" />
-                            </svg>
+                    </li> -->
+                    <li id="notification_li">
+                        <span id="notification_count">3</span>
+                        <a href="#" id="notificationLink"><img class="w-20 mt-4" src="./images/eyes.png" alt=""></a>
 
-                        </a>
+                        <div id="notificationContainer"
+                            class=" shadow bg white dark:bg-dark-second dark:text-dark-txt mt-4 rounded-lg bg-gray-700">
+                            <div class="flex items-center justify-between px-4 py-2 pt-6 pb-6 w-4/5 m-ct">
+                                <div class="flex space-x-2 items-center">
+                                    <div class="relative">
+                                        <h3 class="cs-white">Người Ghé Thăm</h3>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex  gird place-items-center text-xl text-gray-500 hover:bg-gray-200 dark:text-dark-txt dark:hover:bg-dark-third rounded-full cursor-pointer pr-4 pl-2">
+                                    <p class="text-blue-500">Đánh dấu chưa đọc</p>
+                                </div>
+                            </div>
+                            <div class="border-b-4 md:border-b-2 w-4/5 text-center m-ct"></div>
+                            <div class="flex items-center justify-between px-4 py-2 pt-6 pb-6 w-4/5 m-ct">
+                                <div class="flex space-x-2 items-center">
+                                    <div class="relative">
+                                        <img src="./images/user.png" alt="" class="w-13 he-13 rounded-full">
+                                        <span
+                                            class="bg-green-500 w-5 h-5 rounded-full absolute right-0 top-3/4 border-white border-2"></span>
+                                    </div>
+                                    <div class="pl-2">
+                                        <div class="font-semibold cs-white">
+                                            Josh Duhamel
+                                        </div>
+                                        <span class="text-sm cs-gray-2">Đã ghé thăm bạn 50 lần
+                                        </span>
+                                    </div>
+                                    <div class="mb-8">
+                                        <a href="#"> 2 giờ trước</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between px-4 py-2 pt-6 pb-6 w-4/5 m-ct">
+                                <div class="flex space-x-2 items-center">
+                                    <div class="relative">
+                                        <img src="./images/Group 82.png" alt="" class="w-13 he-13 rounded-full">
+                                        <span
+                                            class="bg-green-500 w-5 h-5 rounded-full absolute right-0 top-3/4 border-white border-2"></span>
+                                    </div>
+                                    <div class="pl-2">
+                                        <div class="font-semibold cs-white">
+                                            LenaLena
+                                        </div>
+                                        <span class="text-sm cs-gray-2">Đã ghé thăm bạn 50 lần
+                                        </span>
+                                    </div>
+                                    <div class="mb-8">
+                                        <a href="#"> 2 giờ trước</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between px-4 py-2 pt-6 pb-6 w-4/5 m-ct">
+                                <div class="flex space-x-2 items-center">
+                                    <div class="relative">
+                                        <img src="./images/Ellipse 2.png" alt="" class="w-13 he-13 rounded-full">
+                                        <span
+                                            class="bg-green-500 w-5 h-5 rounded-full absolute right-0 top-3/4 border-white border-2"></span>
+                                    </div>
+                                    <div class="pl-2">
+                                        <div class="font-semibold cs-white">
+                                            Kopiyama
+                                        </div>
+                                        <span class="text-sm cs-gray-2">Đã ghé thăm bạn 50 lần
+                                        </span>
+                                    </div>
+                                    <div class="mb-8">
+                                        <a href="#"> 2 giờ trước</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between px-4 py-2 pt-6 pb-6 w-4/5 m-ct">
+                                <div class="flex space-x-2 items-center">
+                                    <div class="relative">
+                                        <img src="./images/Intersect.png" alt="" class="w-13 he-13 rounded-full">
+                                        <span
+                                            class="bg-green-500 w-5 h-5 rounded-full absolute right-0 top-3/4 border-white border-2"></span>
+                                    </div>
+                                    <div class="pl-2">
+                                        <div class="font-semibold cs-white">
+                                            Đinh Thị Hằng Nga
+                                        </div>
+                                        <span class="text-sm cs-gray-2">Đã ghé thăm bạn 50 lần
+                                        </span>
+                                    </div>
+                                    <div class="mb-8">
+                                        <a href="#"> 2 giờ trước</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between px-4 py-2 pt-6 pb-6 w-4/5 m-ct">
+                                <div class="flex space-x-2 items-center">
+                                    <div class="relative">
+                                        <img src="./images/Group 82.png" alt="" class="w-13 he-13 rounded-full">
+                                        <span
+                                            class="bg-green-500 w-5 h-5 rounded-full absolute right-0 top-3/4 border-white border-2"></span>
+                                    </div>
+                                    <div class="pl-2">
+                                        <div class="font-semibold cs-white">
+                                            LenaLena
+                                        </div>
+                                        <span class="text-sm cs-gray-2">Đã ghé thăm bạn 50 lần
+                                        </span>
+                                    </div>
+                                    <div class="mb-8">
+                                        <a href="#"> 2 giờ trước</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between px-4 py-2 pt-6 pb-6 w-4/5 m-ct">
+                                <div class="flex space-x-2 items-center">
+                                    <div class="relative">
+                                        <img src="./images/Group 82.png" alt="" class="w-13 he-13 rounded-full">
+                                        <span
+                                            class="bg-green-500 w-5 h-5 rounded-full absolute right-0 top-3/4 border-white border-2"></span>
+                                    </div>
+                                    <div class="pl-2">
+                                        <div class="font-semibold cs-white">
+                                            LenaLena
+                                        </div>
+                                        <span class="text-sm cs-gray-2">Đã ghé thăm bạn 50 lần
+                                        </span>
+                                    </div>
+                                    <div class="mb-8">
+                                        <a href="#"> 2 giờ trước</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between px-4 py-2 pt-6 pb-6 w-4/5 m-ct">
+                                <div class="flex space-x-2 items-center">
+                                    <div class="relative">
+                                        <img src="./images/Ellipse 2.png" alt="" class="w-13 he-13 rounded-full">
+                                        <span
+                                            class="bg-green-500 w-5 h-5 rounded-full absolute right-0 top-3/4 border-white border-2"></span>
+                                    </div>
+                                    <div class="pl-2">
+                                        <div class="font-semibold cs-white">
+                                            Kopiyama
+                                        </div>
+                                        <span class="text-sm cs-gray-2">Đã ghé thăm bạn 50 lần
+                                        </span>
+                                    </div>
+                                    <div class="mb-8">
+                                        <a href="#"> 2 giờ trước</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="w-2/5 py-4 rounded-lg m-ct-bl bg-blue-500 mb-10">Xem thêm</button>
+                        </div>
+                    </li>
+                    <li id="notification_li_1">
+                        <span id="notification_count_1">4</span>
+                        <a href="#" id="notificationLink_1"><img class="w-20 mt-4" src="./images/Component 2.png"
+                                alt=""></a>
+                        <div id="notificationContainer_1"
+                            class=" shadow bg white dark:bg-dark-second dark:text-dark-txt mt-4 rounded-lg bg-gray-700">
+                            <div class="flex items-center justify-between px-4 py-2 pt-6 pb-6 w-4/5 m-ct">
+                                <div class="flex space-x-2 items-center">
+                                    <div class="relative">
+                                        <h3 class="cs-white">Thông Báo</h3>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex  gird place-items-center text-xl text-gray-500 hover:bg-gray-200 dark:text-dark-txt dark:hover:bg-dark-third rounded-full cursor-pointer pr-4 pl-2">
+                                    <p class="text-blue-500">Đánh dấu chưa đọc</p>
+                                </div>
+                            </div>
+                            <div class="border-b-4 md:border-b-2 w-4/5 text-center m-ct"></div>
+                            <div class="flex items-center justify-between px-4 py-2 pt-6 pb-6 w-4/5 m-ct">
+                                <div class="flex space-x-2 items-center">
+                                    <div class="relative">
+                                        <img src="./images/user.png" alt="" class="w-13 he-13 rounded-full">
+                                        <span
+                                            class="bg-green-500 w-5 h-5 rounded-full absolute right-0 top-3/4 border-white border-2"></span>
+                                    </div>
+                                    <div class="pl-2">
+                                        <div class="font-semibold cs-white">
+                                            Josh Duhamel
+                                        </div>
+                                        <span class="text-sm cs-gray-2">Đã ghé thăm bạn 50 lần
+                                        </span>
+                                    </div>
+                                    <div class="mb-8">
+                                        <a href="#"> 2 giờ trước</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between px-4 py-2 pt-6 pb-6 w-4/5 m-ct">
+                                <div class="flex space-x-2 items-center">
+                                    <div class="relative">
+                                        <img src="./images/Group 82.png" alt="" class="w-13 he-13 rounded-full">
+                                        <span
+                                            class="bg-green-500 w-5 h-5 rounded-full absolute right-0 top-3/4 border-white border-2"></span>
+                                    </div>
+                                    <div class="pl-2">
+                                        <div class="font-semibold cs-white">
+                                            LenaLena
+                                        </div>
+                                        <span class="text-sm cs-gray-2">Đã ghé thăm bạn 50 lần
+                                        </span>
+                                    </div>
+                                    <div class="mb-8">
+                                        <a href="#"> 2 giờ trước</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between px-4 py-2 pt-6 pb-6 w-4/5 m-ct">
+                                <div class="flex space-x-2 items-center">
+                                    <div class="relative">
+                                        <img src="./images/Ellipse 2.png" alt="" class="w-13 he-13 rounded-full">
+                                        <span
+                                            class="bg-green-500 w-5 h-5 rounded-full absolute right-0 top-3/4 border-white border-2"></span>
+                                    </div>
+                                    <div class="pl-2">
+                                        <div class="font-semibold cs-white">
+                                            Kopiyama
+                                        </div>
+                                        <span class="text-sm cs-gray-2">Đã ghé thăm bạn 50 lần
+                                        </span>
+                                    </div>
+                                    <div class="mb-8">
+                                        <a href="#"> 2 giờ trước</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between px-4 py-2 pt-6 pb-6 w-4/5 m-ct">
+                                <div class="flex space-x-2 items-center">
+                                    <div class="relative">
+                                        <img src="./images/Intersect.png" alt="" class="w-13 he-13 rounded-full">
+                                        <span
+                                            class="bg-green-500 w-5 h-5 rounded-full absolute right-0 top-3/4 border-white border-2"></span>
+                                    </div>
+                                    <div class="pl-2">
+                                        <div class="font-semibold cs-white">
+                                            Đinh Thị Hằng Nga
+                                        </div>
+                                        <span class="text-sm cs-gray-2">Đã ghé thăm bạn 50 lần
+                                        </span>
+                                    </div>
+                                    <div class="mb-8">
+                                        <a href="#"> 2 giờ trước</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between px-4 py-2 pt-6 pb-6 w-4/5 m-ct">
+                                <div class="flex space-x-2 items-center">
+                                    <div class="relative">
+                                        <img src="./images/Group 82.png" alt="" class="w-13 he-13 rounded-full">
+                                        <span
+                                            class="bg-green-500 w-5 h-5 rounded-full absolute right-0 top-3/4 border-white border-2"></span>
+                                    </div>
+                                    <div class="pl-2">
+                                        <div class="font-semibold cs-white">
+                                            LenaLena
+                                        </div>
+                                        <span class="text-sm cs-gray-2">Đã ghé thăm bạn 50 lần
+                                        </span>
+                                    </div>
+                                    <div class="mb-8">
+                                        <a href="#"> 2 giờ trước</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between px-4 py-2 pt-6 pb-6 w-4/5 m-ct">
+                                <div class="flex space-x-2 items-center">
+                                    <div class="relative">
+                                        <img src="./images/Group 82.png" alt="" class="w-13 he-13 rounded-full">
+                                        <span
+                                            class="bg-green-500 w-5 h-5 rounded-full absolute right-0 top-3/4 border-white border-2"></span>
+                                    </div>
+                                    <div class="pl-2">
+                                        <div class="font-semibold cs-white">
+                                            LenaLena
+                                        </div>
+                                        <span class="text-sm cs-gray-2">Đã ghé thăm bạn 50 lần
+                                        </span>
+                                    </div>
+                                    <div class="mb-8">
+                                        <a href="#"> 2 giờ trước</a>
+                                    </div>
+                                    <div
+                                        class="flex  gird place-items-center text-xl text-gray-500  dark:text-dark-txt dark:hover:bg-dark-third cursor-pointer pr-4 pl-2">
+                                        <img class="ml-32" src="./images/Rectangle 578.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between px-4 py-2 pt-6 pb-6 w-4/5 m-ct">
+                                <div class="flex space-x-2 items-center">
+                                    <div class="relative">
+                                        <img src="./images/Ellipse 2.png" alt="" class="w-13 he-13 rounded-full">
+                                        <span
+                                            class="bg-green-500 w-5 h-5 rounded-full absolute right-0 top-3/4 border-white border-2"></span>
+                                    </div>
+                                    <div class="pl-2">
+                                        <div class="font-semibold cs-white">
+                                            Kopiyama
+                                        </div>
+                                        <span class="text-sm cs-gray-2">Đã ghé thăm bạn 50 lần
+                                        </span>
+                                    </div>
+                                    <div class="mb-8">
+                                        <a href="#"> 2 giờ trước</a>
+                                    </div>
+                                    <div
+                                        class="flex  gird place-items-center text-xl text-gray-500  dark:text-dark-txt dark:hover:bg-dark-third cursor-pointer pr-4 pl-2">
+                                        <img class="ml-32" src="./images/Rectangle 578.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="w-2/5 py-4 rounded-lg m-ct-bl bg-blue-500 mb-10">Xem thêm thông báo</button>
+                        </div>
                     </li>
                     <li class="hover:bg-blue-800 hover:text-white">
                         <a href="#" class="relative  block py-6 px-2 lg:p-6 text-sm lg:text-base font-bold "><img
@@ -126,9 +432,9 @@
 
     <main>
         <div class="flex justify-center h-screen">
-            <div class="w-2/6 mt-36   h-full  xl:flex flex-col fixed   left-0 ">
+            <div class="w-2/6 mt-36   h-full  xl:flex flex-col fixed   left-24 ">
                 <ul
-                    class="p-4 w-3/5 m-ct shadow bg white dark:bg-dark-second dark:text-dark-txt mt-4 rounded-lg bg-gray-700">
+                    class="p-4 w-7/12 m-ct shadow bg white dark:bg-dark-second dark:text-dark-txt mt-4 rounded-lg bg-gray-700">
                     <li class="">
                         <a href="#"
                             class="flex w-4/5 m-ct items-center space-x-2 p-2  rounded-lg trasition-all dark:text-dark-txt dark:hover:bg-dark-third">
@@ -172,7 +478,7 @@
                     <button class="rounded-lg text-center  w-4/5 m-ct-bl h-24 w-72 bg-green-500 ">
                         <a href="#" class="cs-white">More Suggestion</a></button>
                 </ul>
-                <div class="p-4 w-3/5 m-ct shadow mt-4 rounded-lg bg-gray-700">
+                <div class="p-4 w-7/12 m-ct shadow mt-4 rounded-lg bg-gray-700">
                     <h4 class="cs-white w-4/5 m-ct">Dark Themes</h4>
                     <p class="cs-gray-3 w-4/5 m-ct">Chuyển đổi qua lại giữa chế độ tối và sáng để có trải nghiệm tốt hơn
                     </p>
@@ -189,7 +495,7 @@
                     </div>
                 </div>
             </div>
-            <div class="w-full mt-36 lg:w-2/3 xl:w-2/5 pt-32 lg:pt-16 px-2 ">
+            <div class="w-full mt-36 lg:w-2/3 xl:w-2/5 pt-32 lg:pt-16 px-2 ml-8 ">
                 <!-- Post -->
                 <div class="flex items-center justify-between px-4 py-2  pb-10">
                     <div class="flex space-x-2 items-center">
@@ -949,7 +1255,7 @@
                 </div>
                 <!-- end_post -->
             </div>
-            <div class="w-1/4 mt-36  h-full  xl:block px-4 fixed  right-0 ">
+            <div class="w-1/4 mt-36  h-full  xl:block px-4 fixed  right-28 ">
                 <div class="w-4/5 shadow mt-4 rounded-lg bg-gray-700 pb-10">
                     <p class="cs-gray-3 pl-10">Your Coins</p>
                     <h2 class="cs-white pl-10">2.000.000</h2>
@@ -1001,8 +1307,14 @@
             </div>
         </div>
     </main>
-
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="popover"]').popover();
+        });
+    </script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="./js/main.js"></script>
