@@ -251,7 +251,7 @@
 }
 .g-bs {
     opacity: 0.8;
-    background-image: url(../images/gird.png);
+    background-image: url(./images/gird.png);
     width: 100%;
     background-color: #111827;
 }
@@ -369,4 +369,16 @@
     position: absolute;
     margin-top: 11px;
     font-size: 11px;
+}
+.w_49_pt {
+    width: 49.0234375%;
+}
+.w_30_px {
+    width: 30px;
+}
+.w-17-3-pt {
+    width: 17.33067729083665%;
+}
+.w-82-6-pt {
+    width: 82.66932270916335%;
 }
